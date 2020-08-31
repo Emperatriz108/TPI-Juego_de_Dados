@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JUEGO DE DADOS</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<script type="text/javascript">
+	function aleatorio(a, b) {
+    return Math.round(Math.random()*(b-a)+parseInt(a));
+}
+	function cambiarImagenD1(n){
+		if(n==1){
+			document.getElementById("dado1").src="./img/1.png";
+		}
+		else if (n==2) {
+			document.getElementById("dado1").src="./img/2.png";
+		}
+		else if (n==3) {
+			document.getElementById("dado1").src="./img/3.png";
+		}
+		else if (n==4) {
+			document.getElementById("dado1").src="./img/4.png";
+		}
+		else if (n==5) {
+			document.getElementById("dado1").src="./img/5.png";
+		}
+		else if (n==6) {
+			document.getElementById("dado1").src="./img/6.png";
+		}
+	  
+	}
+	function cambiarImagenD2(n){
+		if(n==1){
+			document.getElementById("dado2").src="./img/1.png";
+		}
+		else if (n==2) {
+			document.getElementById("dado2").src="./img/2.png";
+		}
+		else if (n==3) {
+			document.getElementById("dado2").src="./img/3.png";
+		}
+		else if (n==4) {
+			document.getElementById("dado2").src="./img/4.png";
+		}
+		else if (n==5) {
+			document.getElementById("dado2").src="./img/5.png";
+		}
+		else if (n==6) {
+			document.getElementById("dado2").src="./img/6.png";
+		}
+	  
+	}
+
+	function prueba(){
+		d1= aleatorio(1,6);
+		d2= aleatorio(1,6);
+		if(d1==d2){
+			document.getElementById("t").innerHTML="Empate";
+			cambiarImagenD1(d1);
+			cambiarImagenD2(d2);
+		}
+		else if(d1>d2){
+			document.getElementById("t").innerHTML="El jugador 1 es el ganador 🏆";
+			cambiarImagenD1(d1);
+			cambiarImagenD2(d2);
+		}
+		else{
+			document.getElementById("t").innerHTML="El jugador 2 es el ganador 🏆";
+			cambiarImagenD1(d1);
+			cambiarImagenD2(d2);
+		}
+	}
+
+	</script>
+</head>
+<body>
+<div>	
+	<div class="encabezado">
+		<h1 id=t>Juego de dados</h1>
+	</div>
+	<div class="contenido">
+		<div class="j1">Jugador 1</div>
+		<div class="j2">Jugador 2</div>
+		
+	</div>
+	<div class="contenido">
+		<div class="dado1" id="d1">
+			<img src="./img/6.png" id="dado1">
+		</div>
+		<div class="dado2" id="d2">
+			<img src="./img/6.png" id="dado2">
+		</div>
+		
+	</div>
+	<div class="b3">
+		<button class="button" onclick="prueba()"> ¡JUGAR!</button>
+	</div>
+</div> 	
+</body>
+</html>
